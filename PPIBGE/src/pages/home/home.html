@@ -1,0 +1,51 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>City</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" placeholder="Código Cidade" full></ion-searchbar>
+  <button ion-button full (click)="searchCity(this.searchTerm)">Buscar</button>
+
+  <ion-card *ngFor="let ct of City">
+      <ion-item >
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/noticia_ibge.jpg" >
+        </ion-avatar>
+        <h2>{{ct.nome}}</h2>
+        <p>{{ct.id}}</p>
+      </ion-item>
+
+      <img src="../../assets/imgs/noticia_ibge.jpg" >
+
+      <!-- <ion-card-content>
+        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      </ion-card-content> -->
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{ct.microrregiao.mesorregiao.UF.sigla}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{ct.microrregiao.nome}}</div>
+          </button>
+        </ion-col>
+        <ion-col align-self-center text-center>
+          <ion-note>
+              {{ct.microrregiao.mesorregiao.nome}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  <!-- <ion-card *ngFor="let ct of City">
+    <img src="../../assets/imgs/noticia_ibge.jpg" />
+    <div class="card-title">{{ct.nome}} - {{ct.id}}</div>
+  </ion-card> -->
+</ion-content>
